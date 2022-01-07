@@ -14,12 +14,16 @@ import java.util.List;
 public class NoteViewModel extends AndroidViewModel {
 
     public NoteRepository repository;
-    LiveData<List<Note>> getAllNotes;
+    public LiveData<List<Note>> getAllNotes;
+    public LiveData<List<Note>> lowtohigh;
+    public LiveData<List<Note>> hightolow;
 
     public NoteViewModel(@NonNull Application application) {
         super(application);
         repository = new NoteRepository(application);
         getAllNotes = repository.noteDao.getAllNotes();
+        lowtohigh = repository.noteDao.lowtohigh();
+        hightolow = repository.noteDao.hightolow();
     }
 
     public void insert(Note note) {
@@ -37,4 +41,6 @@ public class NoteViewModel extends AndroidViewModel {
     public LiveData<List<Note>> getAllNotes() {
         return getAllNotes;
     }
+
+
 }

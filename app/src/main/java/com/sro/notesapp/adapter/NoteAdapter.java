@@ -69,13 +69,13 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.myViewHolder> 
                 context.startActivity(intent);
             }
         });
-        if (n.priority.equals("red")) {
+        if (n.priority.equals("3")) {
             holder.binding.priority.setImageResource(R.drawable.red);
         }
-        if (n.priority.equals("yellow")) {
+        if (n.priority.equals("2")) {
             holder.binding.priority.setImageResource(R.drawable.yellow);
         }
-        if (n.priority.equals("green")) {
+        if (n.priority.equals("1")) {
             holder.binding.priority.setImageResource(R.drawable.green);
         }
     }

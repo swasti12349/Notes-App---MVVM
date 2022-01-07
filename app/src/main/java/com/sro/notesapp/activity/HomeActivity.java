@@ -18,6 +18,8 @@ public class HomeActivity extends AppCompatActivity {
     ActivityHomeBinding binding;
     NoteViewModel noteViewModel;
     NoteAdapter adapter;
+    int b = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +35,54 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        noteViewModel.getAllNotes().observe(this, notes -> {
+
+            getAllNotes();
+
+        binding.noFilter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getAllNotes();
+            }
+        });
+        binding.hightolow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                hightolow();
+            }
+        });
+        binding.lowtohigh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                lowtohigh();
+            }
+        });
+
+
+    }
+
+    void hightolow() {
+        noteViewModel.hightolow.observe(this, notes -> {
+            binding.noteRV.setLayoutManager(new GridLayoutManager(this, 2));
+            adapter = new NoteAdapter(HomeActivity.this, notes);
+            binding.noteRV.setAdapter(adapter);
+            b = 1;
+        });
+    }
+
+    void lowtohigh() {
+        noteViewModel.lowtohigh.observe(this, notes -> {
+            binding.noteRV.setLayoutManager(new GridLayoutManager(this, 2));
+            adapter = new NoteAdapter(HomeActivity.this, notes);
+            binding.noteRV.setAdapter(adapter);
+            b = 2;
+        });
+    }
+
+    void getAllNotes() {
+        noteViewModel.getAllNotes.observe(this, notes -> {
             binding.noteRV.setLayoutManager(new GridLayoutManager(this, 2));
             adapter = new NoteAdapter(HomeActivity.this, notes);
             binding.noteRV.setAdapter(adapter);
         });
-
     }
-
 }

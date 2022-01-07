@@ -14,11 +14,14 @@ public class NoteRepository {
 
     public NoteDao noteDao;
     LiveData<List<Note>> notesList;
-
+    LiveData<List<Note>> lowtohigh;
+    LiveData<List<Note>> hightolow;
     public NoteRepository(Application application) {
         NoteDatabase database = NoteDatabase.getInstance(application);
         noteDao = database.mainDao();
         notesList = noteDao.getAllNotes();
+        lowtohigh = noteDao.lowtohigh();
+        hightolow = noteDao.hightolow();
     }
 
     public void insertNote(Note note){
@@ -35,5 +38,11 @@ public class NoteRepository {
 
     public LiveData<List<Note>> getAllNotes(){
         return notesList;
+    }
+    public LiveData<List<Note>> lowtohigh(){
+        return lowtohigh;
+    }
+    public LiveData<List<Note>> hightolow(){
+        return hightolow;
     }
 }

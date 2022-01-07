@@ -18,7 +18,7 @@ import java.util.Date;
 public class NotesActivity extends AppCompatActivity {
     ActivityNotesBinding binding;
     NoteViewModel noteViewModel;
-    String priority = "red";
+    String priority = "3";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class NotesActivity extends AppCompatActivity {
         binding.red.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                priority = "red";
+                priority = "3";
                 binding.red.setImageResource(R.drawable.tick);
                 binding.yellow.setImageResource(0);
                 binding.green.setImageResource(0);
@@ -40,7 +40,7 @@ public class NotesActivity extends AppCompatActivity {
         binding.green.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                priority = "green";
+                priority = "1";
                 binding.green.setImageResource(R.drawable.tick);
                 binding.red.setImageResource(0);
                 binding.yellow.setImageResource(0);
@@ -49,7 +49,7 @@ public class NotesActivity extends AppCompatActivity {
         binding.yellow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                priority = "yellow";
+                priority = "2";
                 binding.yellow.setImageResource(R.drawable.tick);
                 binding.red.setImageResource(0);
                 binding.green.setImageResource(0);
@@ -82,7 +82,6 @@ public class NotesActivity extends AppCompatActivity {
         CharSequence charSequence = DateFormat.getTimeInstance().format(date.getTime());
         Note notes = new Note(title, subtitle, note, priority);
         notes.noteDate = charSequence.toString();
-
         noteViewModel.insert(notes);
         finish();
     }

@@ -44,20 +44,20 @@ public class UpdateActivity extends AppCompatActivity {
         binding.notesubtitle.setText(subtitle);
         binding.note.setText(note);
 
-        if (priority.equals("red")) {
-            priority = "red";
+        if (priority.equals("3")) {
+            priority = "3";
             binding.red.setImageResource(R.drawable.tick);
             binding.yellow.setImageResource(0);
             binding.green.setImageResource(0);
         }
-        if (priority.equals("green")) {
-            priority = "green";
+        if (priority.equals("1")) {
+            priority = "1";
             binding.green.setImageResource(R.drawable.tick);
             binding.red.setImageResource(0);
             binding.yellow.setImageResource(0);
         }
-        if (priority.equals("yellow")) {
-            priority = "yellow";
+        if (priority.equals("2")) {
+            priority = "2";
             binding.yellow.setImageResource(R.drawable.tick);
             binding.red.setImageResource(0);
             binding.green.setImageResource(0);
@@ -66,7 +66,7 @@ public class UpdateActivity extends AppCompatActivity {
         binding.red.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                priority = "red";
+                priority = "3";
                 binding.red.setImageResource(R.drawable.tick);
                 binding.yellow.setImageResource(0);
                 binding.green.setImageResource(0);
@@ -75,7 +75,7 @@ public class UpdateActivity extends AppCompatActivity {
         binding.green.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                priority = "green";
+                priority = "1";
                 binding.green.setImageResource(R.drawable.tick);
                 binding.red.setImageResource(0);
                 binding.yellow.setImageResource(0);
@@ -84,7 +84,7 @@ public class UpdateActivity extends AppCompatActivity {
         binding.yellow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                priority = "yellow";
+                priority = "2";
                 binding.yellow.setImageResource(R.drawable.tick);
                 binding.red.setImageResource(0);
                 binding.green.setImageResource(0);

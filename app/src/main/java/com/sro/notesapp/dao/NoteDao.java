@@ -16,6 +16,12 @@ public interface NoteDao {
     @Query("SELECT * FROM NoteTable")
     LiveData<List<Note>> getAllNotes();
 
+    @Query("SELECT * FROM NoteTable ORDER BY priority ASC")
+    LiveData<List<Note>> lowtohigh();
+
+    @Query("SELECT * FROM NoteTable ORDER BY priority DESC")
+    LiveData<List<Note>> hightolow();
+
     @Insert
     void insert(Note...notes);
 
