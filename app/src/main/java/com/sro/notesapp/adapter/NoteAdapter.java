@@ -18,16 +18,19 @@ import com.sro.notesapp.databinding.NoteitemBinding;
 import com.sro.notesapp.model.Note;
 import com.sro.notesapp.viewModel.NoteViewModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.myViewHolder> {
     Context context;
     List<Note> noteList;
+    List<Note> AllnoteList;
     NoteViewModel noteViewModel;
 
     public NoteAdapter(Context context, List<Note> noteList) {
         this.context = context;
         this.noteList = noteList;
+        AllnoteList = new ArrayList<>(noteList);
     }
 
     @NonNull
@@ -37,8 +40,9 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.myViewHolder> 
         return new myViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.noteitem, parent, false));
     }
 
-    public Note getNoteAt(int position) {
-        return noteList.get(position);
+    public void searchNote(List<Note> filterName) {
+        this.noteList = filterName;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -47,14 +51,18 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.myViewHolder> 
         holder.binding.title.setText(n.noteTitle);
         holder.binding.subtitle.setText(n.noteSubTitle);
         holder.binding.date.setText(n.noteDate);
-        noteViewModel = ViewModelProviders.of((FragmentActivity) context)
-                .get(NoteViewModel.class);
+
+        noteViewModel = ViewModelProviders
+                        .of((FragmentActivity) context)
+                        .get(NoteViewModel.class);
+
         holder.binding.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 noteViewModel.delete(n.id);
             }
         });
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

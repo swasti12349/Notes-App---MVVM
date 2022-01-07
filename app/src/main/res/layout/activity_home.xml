@@ -25,11 +25,11 @@
             android:id="@+id/noFilter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="10dp"
             android:layout_marginEnd="5dp"
             android:layout_weight="1"
             android:background="@drawable/bg"
-            android:padding="5dp"
+            android:padding="10dp"
             android:text="No Filter"
             android:textAlignment="center" />
 
@@ -41,7 +41,7 @@
             android:layout_marginEnd="5dp"
             android:layout_weight="1"
             android:background="@drawable/bg"
-            android:padding="5dp"
+            android:padding="10dp"
             android:text="low to high"
             android:textAlignment="center" />
 
@@ -53,7 +53,7 @@
             android:layout_marginEnd="5dp"
             android:layout_weight="1"
             android:background="@drawable/bg"
-            android:padding="5dp"
+            android:padding="10dp"
             android:text="high to low"
             android:textAlignment="center" />
     </LinearLayout>

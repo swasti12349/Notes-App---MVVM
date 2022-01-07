@@ -8,6 +8,7 @@
         <entry key="..\:/NotesApp/app/src/main/res/drawable/green.xml" value="0.3154296875" />
         <entry key="..\:/NotesApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1375" />
         <entry key="..\:/NotesApp/app/src/main/res/drawable/red.xml" value="0.2203125" />
+        <entry key="..\:/NotesApp/app/src/main/res/drawable/search.xml" value="0.1" />
         <entry key="..\:/NotesApp/app/src/main/res/drawable/tick.xml" value="0.2203125" />
         <entry key="..\:/NotesApp/app/src/main/res/drawable/yellow.xml" value="0.2203125" />
         <entry key="..\:/NotesApp/app/src/main/res/layout/activity_home.xml" value="0.25" />
@@ -15,6 +16,7 @@
         <entry key="..\:/NotesApp/app/src/main/res/layout/activity_notes.xml" value="0.25" />
         <entry key="..\:/NotesApp/app/src/main/res/layout/activity_update.xml" value="0.18" />
         <entry key="..\:/NotesApp/app/src/main/res/layout/noteitem.xml" value="0.25" />
+        <entry key="..\:/NotesApp/app/src/main/res/menu/searchmenu.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>
